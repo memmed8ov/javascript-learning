@@ -15,7 +15,6 @@ function Box(props) {
 
   return <div>
     <span style={{ textColor: 'green', myColor: 'red' }}>
-
       <div style={{ color: 'myColor' }}>
         <span style={{ color: 'textColor' }}>insidebox</span>
       </div>
