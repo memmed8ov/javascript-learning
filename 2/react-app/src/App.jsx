@@ -1,49 +1,33 @@
-import Button from '@mui/material/Button';
+import { Children } from "react";
 
 function SpecialInput(props) {
 
-  //const [color,setColor]=useState(props)
+
 
   return (
     <div>
-      <div style={{ background: "red", margin: '10px', padding: '15px' }}></div>
+      <div style={{ background: "grey", margin: '10px', padding: '15px' }}>
+        <h1>
+          hello{props.name}
+        </h1>
+      </div>
+   
+      {props.Children}
     </div>
   )
 }
 
-function Box(props) {
 
-  return <div>
-    <span style={{ textColor: 'green', myColor: 'red' }}>
-      <div style={{ color: 'myColor' }}>
-        <span style={{ color: 'textColor' }}>insidebox</span>
-      </div>
-    </span>
-  </div>
-}
 
 function App() {
   return <>
     <div>
 
-      <Button variant="contained">Contained</Button>
-      <Button variant="contained" disabled>
-        Disabled
-      </Button>
-      <Button variant="contained" href="#contained-buttons">
-        Link
-      </Button>
+      
 
-      <SpecialInput props ></SpecialInput>
+      <SpecialInput name='babe' children={"rey"}></SpecialInput>
 
-      <br />
-      <div>
-
-        <Box props >
-
-        </Box>
-
-      </div>
+      
     </div>
   </>
 
