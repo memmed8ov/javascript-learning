@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 
- import {Countries} from './rout/country/country-page';
+import {Countries} from './rout/country/country-page';
 
 import {Cities} from './rout/city/city-page';
 
