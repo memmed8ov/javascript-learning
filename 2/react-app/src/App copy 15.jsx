@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-function SpecialInput(props) {
+ function SpecialInput(props) {
 
   //const [color,setColor]=useState(props)
 

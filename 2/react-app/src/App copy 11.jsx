@@ -113,7 +113,6 @@ function App() {
               "description": descupdate,
               "name": nameupdate
             },
-            "relations": null,
             "auditData": {
               "createdOn": "2022-10-29T20:25:28.770297Z",
               "updatedOn": "2022-10-29T20:25:28.770297Z",
