@@ -7,7 +7,7 @@ export function CityList() {
     const [data, setData] = useState([])
 
 
-    function allcode() {
+    function loadCityList() {
 
         axios.get('http://tiswork.tisserv.net:8008/country?limit=1000')
             .then(resp => {
@@ -16,7 +16,7 @@ export function CityList() {
 
     }
     useEffect(() => {
-        allcode()
+        loadCityList()
 
     }, [])
 
@@ -58,7 +58,7 @@ export function CityList() {
                                 axios.delete("http://tiswork.tisserv.net:8008/country/" + item.id).then(resp => {
 
 
-                                    allcode()
+                                    loadCityList()
 
                                 })
                             }}

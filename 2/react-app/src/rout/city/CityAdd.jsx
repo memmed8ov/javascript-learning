@@ -6,7 +6,7 @@ export function CityAdd() {
     const [name, setName] = useState('')
     const [code, setCode] = useState('')
     const navigate = useNavigate()
-
+    
     return <>
         <div>
             <br />
@@ -20,20 +20,13 @@ export function CityAdd() {
                 let object = {
                     "properties": {
                         "description": code,
-                        "name": name
-
-                    }
+                        "name": name }
                 }
 
                 axios.post('http://tiswork.tisserv.net:8008/country', object).then(resp => {
                     navigate('..')
                 })
-
-
-
-
-
-            }} style={{ width: "80px", height: "40px", marginLeft: '50px', backgroundColor: 'green', borderRadius: '50px' }}>Add</button>
+ }} style={{ width: "80px", height: "40px", marginLeft: '50px', backgroundColor: 'green', borderRadius: '50px' }}>Add</button>
         </div>
     </>
 }

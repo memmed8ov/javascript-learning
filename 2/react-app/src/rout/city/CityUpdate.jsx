@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export function CityUpdate() {
     const navigate = useNavigate()
@@ -9,12 +9,12 @@ export function CityUpdate() {
     const itemId = params.id
 
     const [nameupdate, setNameUpdate] = useState('')
-    const [codeupdate, setCodeUpdate] = useState('')
+    const [descriptionupdate, setDescriptionUpdate] = useState('')
 
     useEffect(() => {
         axios.get('http://tiswork.tisserv.net:8008/country/' + itemId).then(resp => {
             setNameUpdate(resp.data.Record.properties.name)
-            setCodeUpdate(resp.data.Record.properties.description)
+            setDescriptionUpdate(resp.data.Record.properties.description)
         })
     }, [])
 
@@ -24,7 +24,7 @@ export function CityUpdate() {
             <input type="text" style={{ marginLeft: '30px' }} value={nameupdate} onChange={e => setNameUpdate((e.target.value))} />
             <br />
             <br />
-            <input type="text" style={{ marginLeft: '30px' }} value={codeupdate} onChange={e => setCodeUpdate((e.target.value))} />
+            <input type="text" style={{ marginLeft: '30px' }} value={descriptionupdate} onChange={e => setDescriptionUpdate((e.target.value))} />
             <br />
             <br />
 
@@ -36,7 +36,7 @@ export function CityUpdate() {
                     "resource": "country",
                     "type": "USER",
                     "properties": {
-                        "description": codeupdate,
+                        "description": descriptionupdate,
                         "name": nameupdate
                     },
                     "auditData": {
