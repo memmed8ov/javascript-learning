@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function App() {
+export function App() {
   const [data, setData] = useState([])
   const [name, setName] = useState('')
   const [lastName, setLastName] = useState('')
