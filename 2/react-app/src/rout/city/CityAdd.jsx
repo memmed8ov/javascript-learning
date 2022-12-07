@@ -10,10 +10,13 @@ export function CityAdd() {
     return <>
         <div>
             <br />
-            <input placeholder='name' style={{ marginLeft: '50px' }} type="text" value={name} onChange={e => setName((e.target.value))} />
+            Name: <input placeholder='name' style={{ marginLeft: '50px' }} type="text" value={name} onChange={e => setName((e.target.value))} />
             <br />
             <br />
-            <input placeholder='code' style={{ marginLeft: '50px' }} type="text" value={code} onChange={e => setCode((e.target.value))} />
+            Code: <input placeholder='code' style={{ marginLeft: '50px' }} type="text" value={code} onChange={e => setCode((e.target.value))} />
+            <br />
+            <br />
+            Country: 
             <br />
             <br />
             <button onClick={() => {
