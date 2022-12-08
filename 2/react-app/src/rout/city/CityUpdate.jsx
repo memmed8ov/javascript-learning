@@ -18,6 +18,7 @@ export function CityUpdate() {
         axios.get('http://tiswork.tisserv.net:8008/city/' + itemId).then(resp => {
             setNameUpdate(resp.data.Record.properties.name)
             setDescriptionUpdate(resp.data.Record.properties.description)
+            setCountryId(resp.data.Record.properties.country)
         })
 
         axios.get('http://tiswork.tisserv.net:8008/country').then(resp => {
