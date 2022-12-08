@@ -9,7 +9,7 @@ export function CityList() {
 
     function loadCityList() {
 
-        axios.get('http://tiswork.tisserv.net:8008/country?limit=1000')
+        axios.get('http://tiswork.tisserv.net:8008/city?limit=1000')
             .then(resp => {
                 setData(resp.data.content)
             })
@@ -55,7 +55,7 @@ export function CityList() {
 
                         <td>
                             <button onClick={() => {
-                                axios.delete("http://tiswork.tisserv.net:8008/country/" + item.id).then(resp => {
+                                axios.delete("http://tiswork.tisserv.net:8008/city/" + item.id).then(resp => {
 
 
                                     loadCityList()

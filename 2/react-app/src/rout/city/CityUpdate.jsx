@@ -11,10 +11,17 @@ export function CityUpdate() {
     const [nameupdate, setNameUpdate] = useState('')
     const [descriptionupdate, setDescriptionUpdate] = useState('')
 
+    const [countryId, setCountryId] = useState()
+    const [countryList, setCountryList] = useState([])
+
     useEffect(() => {
-        axios.get('http://tiswork.tisserv.net:8008/country/' + itemId).then(resp => {
+        axios.get('http://tiswork.tisserv.net:8008/city/' + itemId).then(resp => {
             setNameUpdate(resp.data.Record.properties.name)
             setDescriptionUpdate(resp.data.Record.properties.description)
+        })
+
+        axios.get('http://tiswork.tisserv.net:8008/country').then(resp => {
+            setCountryList(resp.data.content)
         })
     }, [])
 
@@ -27,7 +34,11 @@ export function CityUpdate() {
             <input type="text" style={{ marginLeft: '30px' }} value={descriptionupdate} onChange={e => setDescriptionUpdate((e.target.value))} />
             <br />
             <br />
-
+            <select value={countryId} onChange={e => {
+                setCountryId(e.target.value)
+            }}>
+                {countryList.map(item => <option value={item.id}>{item.properties.name}</option>)}
+            </select>
 
             <button onClick={() => {
                 let object = {
@@ -37,7 +48,8 @@ export function CityUpdate() {
                     "type": "USER",
                     "properties": {
                         "description": descriptionupdate,
-                        "name": nameupdate
+                        "name": nameupdate,
+                        "country": countryId
                     },
                     "auditData": {
                         "createdOn": "2022-10-29T20:25:28.770297Z",
@@ -48,7 +60,7 @@ export function CityUpdate() {
                     "version": 1
                 }
 
-                axios.put('http://tiswork.tisserv.net:8008/country/' + itemId, object).then(() => {
+                axios.put('http://tiswork.tisserv.net:8008/city/' + itemId, object).then(() => {
                     navigate('..')
                 })
 

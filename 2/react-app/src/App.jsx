@@ -26,6 +26,9 @@ export function NavBar() {
                     City
                 </Button>
                
+
+
+                
             </Box>
         </Toolbar>
     </AppBar>)
@@ -41,6 +44,7 @@ function App() {
             <Routes>
                 <Route path='/country-page/*' element={<Countries></Countries>} ></Route>
                 <Route path='/city-page/*' element={<Cities></Cities>} ></Route>
+               
             </Routes>
         </Router>
     </>
