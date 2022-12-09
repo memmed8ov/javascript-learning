@@ -7,7 +7,7 @@ export function CitiesOfCountry() {
     const [list, setList] = useState([])
 
     function loadCityList() {
-        axios.get('http://tiswork.tisserv.net:8008/city?limit=1000').then(resp => {
+        axios.get('http://tiswork.tisserv.net:8008/city?country=4b4cd883-7729-11ed-8ee2-7c10c91d547f&limit=1000').then(resp => {
                 setList(resp.data.content)
         })
     }
