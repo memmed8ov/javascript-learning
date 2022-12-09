@@ -29,8 +29,8 @@ export function CountryList() {
                 navigate('new')
             }} style={{ width: "80px", height: "40px", marginLeft: '50px', backgroundColor: 'green', borderRadius: '50px' }}>New</button>
 
-             <br />
-             <br />
+            <br />
+            <br />
 
             <table className='container table bordered table-grey'>
 
@@ -66,8 +66,12 @@ export function CountryList() {
                                 style={{ backgroundColor: 'black', color: 'white' }}>x</button>
 
                             <button onClick={() => {
-                                    navigate(item.id + '/update')
+                                navigate(item.id + '/update')
                             }} style={{ backgroundColor: 'black', color: 'white' }}>redact</button>
+
+                            <button onClick={() => {
+                                navigate(item.id + '/cities')
+                            }} style={{ backgroundColor: 'black', color: 'white' }}>cities</button>
 
                         </td>
 
