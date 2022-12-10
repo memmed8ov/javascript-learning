@@ -6,7 +6,6 @@ export function CitiesOfCountry() {
     const [list, setList] = useState([])
 
     const params = useParams()
-    console.log(params)
 
     const itemId = params.id
 

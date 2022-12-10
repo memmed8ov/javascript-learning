@@ -43,6 +43,9 @@ export function CityList() {
                             code
                         </th>
 
+                        <th>
+                            country
+                        </th>
 
                     </tr>
                 </thead>
@@ -52,14 +55,12 @@ export function CityList() {
 
                         <td>{item.properties.name}</td>
                         <td>{item.properties.description}</td>
+                        <td>{item.properties.country}</td>
 
                         <td>
                             <button onClick={() => {
                                 axios.delete("http://tiswork.tisserv.net:8008/city/" + item.id).then(resp => {
-
-
                                     loadCityList()
-
                                 })
                             }}
                                 style={{ backgroundColor: 'black', color: 'white' }}>x</button>
@@ -69,7 +70,7 @@ export function CityList() {
                             }} style={{ backgroundColor: 'black', color: 'white' }}>redact</button>
 
                             <button onClick={() => {
-                                
+
                             }} style={{ backgroundColor: 'black', color: 'white' }}>similar cities</button>
 
                         </td>
