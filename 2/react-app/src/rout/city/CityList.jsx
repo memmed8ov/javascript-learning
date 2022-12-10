@@ -28,8 +28,8 @@ export function CityList() {
                 navigate('new')
             }} style={{ width: "80px", height: "40px", marginLeft: '50px', backgroundColor: 'green', borderRadius: '50px' }}>New</button>
 
-             <br />
-             <br />
+            <br />
+            <br />
 
             <table className='container table bordered table-grey'>
 
@@ -65,8 +65,12 @@ export function CityList() {
                                 style={{ backgroundColor: 'black', color: 'white' }}>x</button>
 
                             <button onClick={() => {
-                                    navigate(item.id + '/update')
+                                navigate(item.id + '/update')
                             }} style={{ backgroundColor: 'black', color: 'white' }}>redact</button>
+
+                            <button onClick={() => {
+                                
+                            }} style={{ backgroundColor: 'black', color: 'white' }}>similar cities</button>
 
                         </td>
 
@@ -77,4 +81,5 @@ export function CityList() {
             </table>
         </div>
 
-    </>}
+    </>
+}
