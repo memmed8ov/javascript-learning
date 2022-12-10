@@ -1,14 +1,21 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
 
 export function CitiesOfCountry() {
     const [list, setList] = useState([])
 
+    const params = useParams()
+    console.log(params)
+
+    const itemId = params.id
+
+
+
     function loadCityList() {
-        axios.get('http://tiswork.tisserv.net:8008/city?country=4b4cd883-7729-11ed-8ee2-7c10c91d547f&limit=1000').then(resp => {
-                setList(resp.data.content)
+        console.log(itemId)
+        axios.get('http://tiswork.tisserv.net:8008/city?country=' + itemId + '&limit=1000').then(resp => {
+            setList(resp.data.content)
         })
     }
 

@@ -1,0 +1,8 @@
+// http://tiswork.tisserv.net:8008/city?country=4b4cd883-7729-11ed-8ee2-7c10c91d547f&limit=1000
+// http => schema
+// :// => adsiz 
+// tiswork.tisserv.net => hostname, host
+// 8008 => port
+// /city => path
+// ?country=4b4cd883-7729-11ed-8ee2-7c10c91d547f&limit=1000  => query
+// country=4b4cd883-7729-11ed-8ee2-7c10c91d547f    limit=1000  => query parameter
