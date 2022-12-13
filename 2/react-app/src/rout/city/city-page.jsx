@@ -10,7 +10,7 @@ export function Cities() {
             <Route path='' element={<CityList></CityList>} ></Route>
             <Route path='new' element={<CityAdd></CityAdd>} ></Route>
             <Route path=':id/update' element={<CityUpdate></CityUpdate>} ></Route>
-{/* <Route path=''element={<Test></Test>}></Route> */}
+            {/* <Route path=''element={<Test></Test>}></Route> */}
         </Routes>
     </>
 }

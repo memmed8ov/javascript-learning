@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import {Countries} from './rout/country/country-page';
 
 import {Cities} from './rout/city/city-page';
+import{Login} from './rout/login/LoginPage';
 
 export function NavBar() {
     const navigate = useNavigate()
@@ -26,7 +27,11 @@ export function NavBar() {
                     City
                 </Button>
                
-
+                <Button sx={{ color: '#fff' }} onClick={() => {
+                    navigate('/LoginPage')
+                }}>
+                    LOGIN
+                </Button>
 
                 
             </Box>
@@ -44,6 +49,7 @@ function App() {
             <Routes>
                 <Route path='/country-page/*' element={<Countries></Countries>} ></Route>
                 <Route path='/city-page/*' element={<Cities></Cities>} ></Route>
+                <Route path='/LoginPage/*' element={<Login></Login>} ></Route>
                
             </Routes>
         </Router>

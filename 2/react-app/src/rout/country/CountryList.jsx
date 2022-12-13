@@ -5,14 +5,14 @@ import { useNavigate } from 'react-router-dom'
 
 export function CountryList() {
     const navigate = useNavigate()
-    const [data, setData] = useState([])
+    const [countries, setCountries] = useState([])
 
 
     function allcode() {
 
         axios.get('http://tiswork.tisserv.net:8008/country?limit=1000')
             .then(resp => {
-                setData(resp.data.content)
+                setCountries(resp.data.content)
             })
 
     }
@@ -49,14 +49,14 @@ export function CountryList() {
                 </thead>
 
                 <tbody style={{ backgroundColor: 'grey', width: '50px' }}>
-                    {data.map(item => <tr>
+                    {countries.map(countryItem => <tr>
 
-                        <td>{item.properties.name}</td>
-                        <td>{item.properties.description}</td>
+                        <td>{countryItem.properties.name}</td>
+                        <td>{countryItem.properties.description}</td>
 
                         <td>
                             <button onClick={() => {
-                                axios.delete("http://tiswork.tisserv.net:8008/country/" + item.id).then(resp => {
+                                axios.delete("http://tiswork.tisserv.net:8008/country/" + countryItem.id).then(resp => {
 
 
                                     allcode()
@@ -66,11 +66,11 @@ export function CountryList() {
                                 style={{ backgroundColor: 'black', color: 'white' }}>x</button>
 
                             <button onClick={() => {
-                                navigate(item.id + '/update')
+                                navigate(countryItem.id + '/update')
                             }} style={{ backgroundColor: 'black', color: 'white' }}>redact</button>
 
                             <button onClick={() => {
-                                navigate(item.id + '/cities')
+                                navigate(countryItem.id + '/cities')
                             }} style={{ backgroundColor: 'black', color: 'white' }}>cities</button>
 
                         </td>
