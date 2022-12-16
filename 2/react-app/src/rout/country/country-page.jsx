@@ -13,7 +13,6 @@ export function Countries() {
             <Route path='new' element={<CountryAdd></CountryAdd>} ></Route>
             <Route path=':id/update' element={<CountryUpdate></CountryUpdate>} ></Route>
             <Route path=':id/cities' element={<CitiesOfCountry></CitiesOfCountry>} ></Route>
-            <Route path=':id/cities/:taleh/:reyhan' element={<CitiesOfCountry></CitiesOfCountry>} ></Route>
         </Routes>
     </>
 }

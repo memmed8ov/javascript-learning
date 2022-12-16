@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom'
 
 export function CityList() {
     const navigate = useNavigate()
-    const [data, setData] = useState([])
+    const [cities, setCities] = useState([])
 
 
     function loadCityList() {
 
         axios.get('http://tiswork.tisserv.net:8008/city?limit=1000')
             .then(resp => {
-                setData(resp.data.content)
+                setCities(resp.data.content)
             })
 
     }
@@ -51,26 +51,26 @@ export function CityList() {
                 </thead>
 
                 <tbody style={{ backgroundColor: 'grey', width: '50px' }}>
-                    {data.map(item => <tr>
+                    {cities.map(cityItem => <tr>
 
-                        <td>{item.properties.name}</td>
-                        <td>{item.properties.description}</td>
-                        <td>{item.properties.country}</td>
+                        <td>{cityItem.properties.name}</td>
+                        <td>{cityItem.properties.description}</td>
+                        <td>{cityItem.properties.country}</td>
 
                         <td>
                             <button onClick={() => {
-                                axios.delete("http://tiswork.tisserv.net:8008/city/" + item.id).then(resp => {
+                                axios.delete("http://tiswork.tisserv.net:8008/city/" + cityItem.id).then(resp => {
                                     loadCityList()
                                 })
                             }}
                                 style={{ backgroundColor: 'black', color: 'white' }}>x</button>
 
                             <button onClick={() => {
-                                navigate(item.id + '/update')
+                                navigate(cityItem.id + '/update')
                             }} style={{ backgroundColor: 'black', color: 'white' }}>redact</button>
 
                             <button onClick={() => {
-
+                                navigate('../country-page/' + cityItem.properties.country + '/cities')
                             }} style={{ backgroundColor: 'black', color: 'white' }}>similar cities</button>
 
                         </td>
@@ -84,3 +84,5 @@ export function CityList() {
 
     </>
 }
+
+// abstraction

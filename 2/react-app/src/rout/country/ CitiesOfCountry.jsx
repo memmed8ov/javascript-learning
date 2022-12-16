@@ -9,7 +9,7 @@ export function CitiesOfCountry() {
 
     const itemId = params.id
 
-
+    
 
     function loadCityList() {
         console.log(itemId)
