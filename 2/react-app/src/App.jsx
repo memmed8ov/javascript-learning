@@ -77,10 +77,11 @@ function ProtectedRoutes() {
 }
 
 
-function App() {
+function App() { const isLoggedIn = !!localStorage.getItem('token')
     return <>
+    
         <Router>
-            <NavBar />
+        {isLoggedIn &&<NavBar />}
             <br />
             <br />
             <br />
